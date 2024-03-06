@@ -1,0 +1,31 @@
+#declaring GET methods
+type Query {
+    owners: [Owner]
+    owner(id: ID): Owner
+}
+
+#declaring POST methods
+type Mutation {
+    create(name:String, pet: PetInput): Owner
+    update(id:ID, name:String, pet: PetInput): Owner
+    delete(id:ID): Owner
+}
+
+#input type for Pet
+input PetInput {
+    name: String
+    color: String
+}
+
+# object form
+type Pet {
+    name: String
+    color: String
+}
+
+# object form
+type Owner {
+    id: ID!
+    name: String
+    pet: Pet
+}
